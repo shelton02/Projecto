@@ -78,12 +78,16 @@ padding: 24px;
   top: 50%;
   z-index: 1;
   left: 0;
+  animation: slide-out 0.1s ;
 
 }
 
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
+}
+
 .light #switch button{
-  right: 0;
-  left: initial;
+ animation: slide-in 0.1s forwards;
 }
 
 
@@ -173,3 +177,24 @@ font-size: 14px;
     --bg-url: url(./assets/bg-desktop-light.jpg);
   }
   }
+
+  /*Animation*/
+  @keyframes slide-in {
+    from {
+      left: 0;
+    }
+    to {
+      left: 50%;
+    }
+  }
+
+  @keyframes slide out {
+    from {
+      left: 50%;
+    }
+    to {
+      left: 0;
+    }
+
+  }
+
